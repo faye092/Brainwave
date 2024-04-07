@@ -5,7 +5,6 @@ import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
-import { Parallax } from "react-parallax";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -21,7 +20,7 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
-            Explore the Possibilites of AI Chatting with BrainwaveCurve
+            Explore the Possibilites of&nbsp; AI&nbsp; Chatting with {` `}
             <span className="inline-block relative">
               Brainwave{" "}
               <img
@@ -58,10 +57,18 @@ const Hero = () => {
                   <ul
                     className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9 backdrop-blur border border-n-1/10
                   rounded-2xl xl:flex"
-                  ></ul>
+                  >
+                    {heroIcons.map((icon, index) => (
+                      <li className="p-5" key={index}>
+                        <img src={icon} width={24} height={25} alt={icon} />
+                      </li>
+                    ))}
+                  </ul>
                 </ScrollParallax>
               </div>
             </div>
+
+            <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <img
@@ -72,6 +79,8 @@ const Hero = () => {
               alt="hero"
             />
           </div>
+
+          <BackgroundCircles />
         </div>
       </div>
     </Section>
