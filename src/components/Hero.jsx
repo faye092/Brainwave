@@ -1,8 +1,15 @@
 import { curve, heroBackground, robot } from "../assets";
 import Section from "./Section";
 import Button from "./Button";
+import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
+import { heroIcons } from "../constants";
+import { ScrollParallax } from "react-just-parallax";
+import { useRef } from "react";
+import { Parallax } from "react-parallax";
 
 const Hero = () => {
+  const parallaxRef = useRef(null);
+
   return (
     <Section
       className="pt-[12rem] -mt-[5.25rem]"
@@ -11,7 +18,7 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      <div className="container relative">
+      <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
             Explore the Possibilites of AI Chatting with BrainwaveCurve
@@ -41,11 +48,18 @@ const Hero = () => {
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
                   src={robot}
-                  className="w-full"
+                  className="w-full scale-[1.7] tranlate-y-[8%] md:scale-[1] md:translate-y-[10%] lg:-translate-y-[23%]"
                   width={1024}
                   height={490}
                   alt="AI"
                 />
+
+                <ScrollParallax isAbsolutelyPositioned>
+                  <ul
+                    className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9 backdrop-blur border border-n-1/10
+                  rounded-2xl xl:flex"
+                  ></ul>
+                </ScrollParallax>
               </div>
             </div>
           </div>
