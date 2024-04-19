@@ -7,6 +7,7 @@ import {
   PhotoChatMessage,
   VideoBar,
   VideoChatMessage,
+  Gradient,
 } from "./design/Services";
 
 const Services = () => {
@@ -112,7 +113,7 @@ const Services = () => {
                 </ul>
               </div>
 
-              <div className="relative">
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <img
                   src={service3}
                   className="w-full h-full object-cover"
@@ -126,6 +127,8 @@ const Services = () => {
               </div>
             </div>
           </div>
+
+          <Gradient />
         </div>
       </div>
     </Section>
