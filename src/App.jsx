@@ -15,6 +15,7 @@ const App = () => {
         <Benefits />
         <Collaboration />
         <Services />
+        <Pricing />
       </div>
 
       <ButtongGradient />
